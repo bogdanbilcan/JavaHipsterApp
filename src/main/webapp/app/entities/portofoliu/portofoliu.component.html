@@ -1,0 +1,102 @@
+<div>
+    <h2 id="page-heading">
+        <span>Portofolius</span>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="portofolius?.length === 0">
+        <span>No portofolius found</span>
+    </div>
+    <div class="table-responsive" *ngIf="portofolius?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="htrocarno"><span>Htrocarno</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="dealer"><span>Dealer</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="datarezsaufactura"><span>Datarezsaufactura</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="dataexpirare"><span>Dataexpirare</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="resdealerid"><span>Resdealerid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tiplinie"><span>Tiplinie</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="locatie"><span>Locatie</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lunaproductie"><span>Lunaproductie</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lunasosireintara"><span>Lunasosireintara</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="codmodel"><span>Codmodel</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tipautovehicul"><span>Tipautovehicul</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="codculoareext"><span>Codculoareext</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="culoareexterior"><span>Culoareexterior</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="culoareIntegererior"><span>Culoare Integererior</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="observatii"><span>Observatii</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="numeclient"><span>Numeclient</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="numevanzator"><span>Numevanzator</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="vin"><span>Vin</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="engineno"><span>Engineno</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="anfabricatiecfciv"><span>Anfabricatiecfciv</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="omologareindividuala"><span>Omologareindividuala</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="pretlista"><span>Pretlista</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="discountstandard"><span>Discountstandard</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="discountsuplimentar"><span>Discountsuplimentar</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="trusalegislativa"><span>Trusalegislativa</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="pretfinal"><span>Pretfinal</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="avansplatit"><span>Avansplatit</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="restdeplata"><span>Restdeplata</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="customertrxid"><span>Customertrxid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="rezcustid"><span>Rezcustid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="soldcustid"><span>Soldcustid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proforma"><span>Proforma</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="transport"><span>Transport</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let portofoliu of portofolius ;trackBy: trackId">
+                <td><a [routerLink]="['/portofoliu', portofoliu.id, 'view' ]">{{portofoliu.id}}</a></td>
+                <td>{{portofoliu.htrocarno}}</td>
+                <td>{{portofoliu.dealer}}</td>
+                <td>{{portofoliu.datarezsaufactura}}</td>
+                <td>{{portofoliu.dataexpirare}}</td>
+                <td>{{portofoliu.resdealerid}}</td>
+                <td>{{portofoliu.tiplinie}}</td>
+                <td>{{portofoliu.locatie}}</td>
+                <td>{{portofoliu.lunaproductie}}</td>
+                <td>{{portofoliu.lunasosireintara}}</td>
+                <td>{{portofoliu.codmodel}}</td>
+                <td>{{portofoliu.tipautovehicul}}</td>
+                <td>{{portofoliu.codculoareext}}</td>
+                <td>{{portofoliu.culoareexterior}}</td>
+                <td>{{portofoliu.culoareIntegererior}}</td>
+                <td>{{portofoliu.observatii}}</td>
+                <td>{{portofoliu.numeclient}}</td>
+                <td>{{portofoliu.numevanzator}}</td>
+                <td>{{portofoliu.vin}}</td>
+                <td>{{portofoliu.engineno}}</td>
+                <td>{{portofoliu.anfabricatiecfciv}}</td>
+                <td>{{portofoliu.omologareindividuala}}</td>
+                <td>{{portofoliu.pretlista}}</td>
+                <td>{{portofoliu.discountstandard}}</td>
+                <td>{{portofoliu.discountsuplimentar}}</td>
+                <td>{{portofoliu.trusalegislativa}}</td>
+                <td>{{portofoliu.pretfinal}}</td>
+                <td>{{portofoliu.avansplatit}}</td>
+                <td>{{portofoliu.restdeplata}}</td>
+                <td>{{portofoliu.customertrxid}}</td>
+                <td>{{portofoliu.rezcustid}}</td>
+                <td>{{portofoliu.soldcustid}}</td>
+                <td>{{portofoliu.proforma}}</td>
+                <td>{{portofoliu.transport}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/portofoliu', portofoliu.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

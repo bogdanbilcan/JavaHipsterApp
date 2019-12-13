@@ -1,0 +1,85 @@
+{
+    "name": "Stoc",
+    "fields": [
+        {
+            "fieldName": "htrocarno",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "resdealerid",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "anfabricatieciv",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tipautovehicul",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codculoareexterior",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descculoareexterior",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vopseametalizata",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "culoareinterior",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observatii",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "locatie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "omologareind",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lunasosireintara",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rezervata",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataexpirarerez",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "dealer",
+            "otherEntityRelationshipName": "stoc",
+            "relationshipName": "dealer"
+        }
+    ],
+    "changelogDate": "20191213170615",
+    "entityTableName": "stoc",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

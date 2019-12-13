@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="dealer">
+            <h2><span>Dealer</span> {{dealer.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{dealer.name}}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{dealer.description}}</span>
+                </dd>
+                <dt><span>Tip Autovehicule</span></dt>
+                <dd>
+                    <span>{{dealer.tipAutovehicule}}</span>
+                </dd>
+                <dt><span>Dealer Id</span></dt>
+                <dd>
+                    <span>{{dealer.dealerId}}</span>
+                </dd>
+                <dt><span>User</span></dt>
+                <dd>
+                    <span *ngFor="let user of dealer.users; let last = last">
+                        {{user.login}}{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span>Stoc</span></dt>
+                <dd>
+                    <div *ngIf="dealer.stocId">
+                        <a [routerLink]="['/stoc', dealer.stocId, 'view']">{{dealer.stocResdealerid}}</a>
+                    </div>
+                </dd>
+                <dt><span>Portofoliu</span></dt>
+                <dd>
+                    <div *ngIf="dealer.portofoliuId">
+                        <a [routerLink]="['/portofoliu', dealer.portofoliuId, 'view']">{{dealer.portofoliuResdealerid}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/dealer', dealer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

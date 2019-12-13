@@ -1,0 +1,31 @@
+{
+    "name": "NotifTemplate",
+    "fields": [
+        {
+            "fieldName": "emailAddresses",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "message",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 600
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191213170612",
+    "entityTableName": "notif_template",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

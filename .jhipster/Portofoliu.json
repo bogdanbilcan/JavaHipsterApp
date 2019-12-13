@@ -1,0 +1,164 @@
+{
+    "name": "Portofoliu",
+    "fields": [
+        {
+            "fieldName": "htrocarno",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dealer",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "datarezsaufactura",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataexpirare",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resdealerid",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tiplinie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "locatie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lunaproductie",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lunasosireintara",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codmodel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipautovehicul",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codculoareext",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "culoareexterior",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "culoareIntegererior",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observatii",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeclient",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numevanzator",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "vin",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "engineno",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "anfabricatiecfciv",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "omologareindividuala",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pretlista",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "discountstandard",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "discountsuplimentar",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "trusalegislativa",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pretfinal",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "avansplatit",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "restdeplata",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "customertrxid",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rezcustid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soldcustid",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "proforma",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "transport",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "dealer",
+            "otherEntityRelationshipName": "portofoliu",
+            "relationshipName": "dealer"
+        }
+    ],
+    "changelogDate": "20191213170614",
+    "entityTableName": "portofoliu",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

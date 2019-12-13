@@ -1,0 +1,62 @@
+{
+    "name": "Dealer",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipAutovehicule",
+            "fieldType": "TipuriAuto",
+            "fieldValues": "AUTOMOBILE,MOTOCILCETE,TOATE"
+        },
+        {
+            "fieldName": "dealerId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "dealer",
+            "relationshipName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "stoc",
+            "otherEntityRelationshipName": "dealer",
+            "relationshipName": "stoc",
+            "otherEntityField": "resdealerid"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "portofoliu",
+            "otherEntityRelationshipName": "dealer",
+            "relationshipName": "portofoliu",
+            "otherEntityField": "resdealerid"
+        }
+    ],
+    "changelogDate": "20191213170613",
+    "entityTableName": "dealer",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

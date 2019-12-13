@@ -42,6 +42,13 @@ public class CacheConfiguration {
             createCache(cm, com.bbc.myapp.domain.User.class.getName());
             createCache(cm, com.bbc.myapp.domain.Authority.class.getName());
             createCache(cm, com.bbc.myapp.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.bbc.myapp.domain.NotifTemplate.class.getName());
+            createCache(cm, com.bbc.myapp.domain.Dealer.class.getName());
+            createCache(cm, com.bbc.myapp.domain.Dealer.class.getName() + ".users");
+            createCache(cm, com.bbc.myapp.domain.Portofoliu.class.getName());
+            createCache(cm, com.bbc.myapp.domain.Portofoliu.class.getName() + ".dealers");
+            createCache(cm, com.bbc.myapp.domain.Stoc.class.getName());
+            createCache(cm, com.bbc.myapp.domain.Stoc.class.getName() + ".dealers");
             // jhipster-needle-ehcache-add-entry
         };
     }

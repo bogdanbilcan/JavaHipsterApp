@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stoc">
+            <h2><span>Stoc</span> {{stoc.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Htrocarno</span></dt>
+                <dd>
+                    <span>{{stoc.htrocarno}}</span>
+                </dd>
+                <dt><span>Resdealerid</span></dt>
+                <dd>
+                    <span>{{stoc.resdealerid}}</span>
+                </dd>
+                <dt><span>Anfabricatieciv</span></dt>
+                <dd>
+                    <span>{{stoc.anfabricatieciv}}</span>
+                </dd>
+                <dt><span>Tipautovehicul</span></dt>
+                <dd>
+                    <span>{{stoc.tipautovehicul}}</span>
+                </dd>
+                <dt><span>Codculoareexterior</span></dt>
+                <dd>
+                    <span>{{stoc.codculoareexterior}}</span>
+                </dd>
+                <dt><span>Descculoareexterior</span></dt>
+                <dd>
+                    <span>{{stoc.descculoareexterior}}</span>
+                </dd>
+                <dt><span>Vopseametalizata</span></dt>
+                <dd>
+                    <span>{{stoc.vopseametalizata}}</span>
+                </dd>
+                <dt><span>Culoareinterior</span></dt>
+                <dd>
+                    <span>{{stoc.culoareinterior}}</span>
+                </dd>
+                <dt><span>Observatii</span></dt>
+                <dd>
+                    <span>{{stoc.observatii}}</span>
+                </dd>
+                <dt><span>Locatie</span></dt>
+                <dd>
+                    <span>{{stoc.locatie}}</span>
+                </dd>
+                <dt><span>Omologareind</span></dt>
+                <dd>
+                    <span>{{stoc.omologareind}}</span>
+                </dd>
+                <dt><span>Lunasosireintara</span></dt>
+                <dd>
+                    <span>{{stoc.lunasosireintara}}</span>
+                </dd>
+                <dt><span>Rezervata</span></dt>
+                <dd>
+                    <span>{{stoc.rezervata}}</span>
+                </dd>
+                <dt><span>Dataexpirarerez</span></dt>
+                <dd>
+                    <span>{{stoc.dataexpirarerez}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+        </div>
+    </div>
+</div>
