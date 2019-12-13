@@ -1,0 +1,48 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "JavaHipsterApp",
+    "packageName": "com.bbc.myapp",
+    "packageFolder": "com/bbc/myapp",
+    "serverPort": 8282,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "gatling",
+      "cucumber",
+      "protractor"
+    ],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.5.1",
+    "jwtSecretKey": "MmU1ODU5YTg5MjdkZDEyMzUxZDdiMmU2YTk2YTgyMDhjNTY1YTk2ZGNlOGY4YmI0ZDAwMTFkMDhhMDhhZmViYWIyY2RkZTk5NzUxMjkxYThjMDA4MzI5YzIxNzg4NDdiYzAyZTU3YjIwNDViNWIzM2IwZGI5NjkzYmNmMGE5Y2E=",
+    "embeddableLaunchScript": false,
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "blueprints": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "bogdanbilcan",
+  "repository-name": "JavaHipsterApp"
+}
